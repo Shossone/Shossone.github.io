@@ -1,4 +1,261 @@
-<p>Hello there</p>
-<p>I'm Shossone, and this is a website for math school students who needs the relevant exam materials for their study.</p>
-<p>If anything in the materials are wrong, please contact me through email, any suggestions will be welcomed, thank you in advance.</p>
-<p>My personal email : shossone9260@qq.com</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shossone | Math Exam Materials</title>
+  <meta name="description" content="Curated math exam materials for students. Free notes, past papers, and solutions maintained by Shossone." />
+  <meta property="og:title" content="Shossone | Math Exam Materials" />
+  <meta property="og:description" content="Curated math exam materials for students. Free notes, past papers, and solutions." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#3b82f6" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='60' fill='%233b82f6'/%3E%3Ctext x='64' y='84' text-anchor='middle' font-size='72' fill='white' font-family='Arial, Helvetica, sans-serif' %3EΣ%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #0f172a;
+      --text: #e5e7eb;
+      --muted:#9ca3af;
+      --brand:#3b82f6;
+      --brand-2:#22d3ee;
+      --ring: #60a5fa55;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc;
+        --card:#ffffff;
+        --text:#0f172a;
+        --muted:#475569;
+        --ring:#3b82f622;
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #3b82f622, transparent 60%),
+        radial-gradient(1200px 600px at 110% 10%, #22d3ee22, transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:30;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      border-bottom:1px solid #ffffff10;
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      height:64px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;
+    }
+    .brand-logo{
+      width:28px;height:28px;border-radius:8px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      display:grid;place-items:center;color:white;font-weight:900;
+    }
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:white;padding:10px 14px;border-radius:10px;border:0;
+      box-shadow:0 10px 24px -10px var(--ring);
+      font-weight:600;white-space:nowrap
+    }
+    .btn:hover{opacity:.95;transform:translateY(-1px)}
+    .ghost{background:transparent;color:var(--text);border:1px solid #ffffff26}
+    /* Mobile nav */
+    .menu-btn{display:none;background:transparent;border:0;color:var(--text)}
+    @media (max-width: 800px){
+      nav ul{display:none}
+      nav ul.open{display:flex;flex-direction:column;gap:10px;position:absolute;top:64px;left:0;right:0;padding:12px 20px;background:color-mix(in oklab, var(--bg) 85%, transparent);border-bottom:1px solid #ffffff12}
+      .menu-btn{display:inline-flex}
+    }
+    /* Hero */
+    .hero{
+      padding:72px 0 40px;
+      text-align:center;
+    }
+    .title{
+      font-size: clamp(28px, 4.5vw, 44px);
+      line-height:1.15;font-weight:800;letter-spacing:.2px;
+    }
+    .subtitle{color:var(--muted);max-width:780px;margin:14px auto 0}
+    .cta{margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    /* Sections */
+    section{padding:36px 0}
+    h2.section-title{
+      font-size:22px;margin:0 0 16px;border-left:4px solid var(--brand);
+      padding-left:10px;letter-spacing:.3px
+    }
+    .grid{
+      display:grid;gap:16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 4;
+      background: linear-gradient(180deg, #ffffff04, transparent 60%) , var(--card);
+      border:1px solid #ffffff14;border-radius:16px;padding:18px;
+      box-shadow:0 8px 24px -18px #0008;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .card:hover{transform:translateY(-2px);border-color:#ffffff2a;box-shadow:0 18px 30px -18px #000a}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:6px 0 12px;color:var(--muted)}
+    .card a{font-weight:600}
+    @media (max-width: 980px){ .card{grid-column: span 6} }
+    @media (max-width: 640px){ .card{grid-column: span 12} }
+    /* About & Contact */
+    .panel{
+      background:var(--card);border:1px solid #ffffff14;border-radius:16px;padding:18px
+    }
+    /* Footer */
+    footer{
+      border-top:1px solid #ffffff10;margin-top:36px;color:var(--muted);
+      font-size:14px;padding:24px 0
+    }
+    /* Back to top */
+    .top{
+      position:fixed;right:18px;bottom:18px;z-index:40;
+      width:42px;height:42px;border-radius:10px;border:1px solid #ffffff22;
+      background:var(--card);display:grid;place-items:center;color:var(--text);
+      box-shadow:0 10px 24px -16px #000c;opacity:.85
+    }
+    .top:hover{opacity:1}
+    /* Utility */
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .kbd{
+      padding:2px 6px;border:1px solid #ffffff2e;border-bottom-width:2px;border-radius:6px;
+      background:#ffffff08;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size:12px
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo">Σ</div>
+        <span>Shossone · Math Materials</span>
+      </div>
+      <nav>
+        <button class="menu-btn" aria-label="Toggle navigation" onclick="toggleMenu()">
+          <span class="kbd">≡</span>
+        </button>
+        <ul id="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#materials">Materials</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn" href="#materials">Explore</a>
+    </div>
+  </header>
+
+  <main id="home" class="hero container">
+    <h1 class="title">High‑quality Math Exam Materials</h1>
+    <p class="subtitle">
+      Hello there — I’m <strong>Shossone</strong>. This site curates concise notes, past papers, solutions, and formula sheets
+      for math students preparing for exams. Everything is free and continuously improved.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#materials" aria-label="Browse materials">Browse Materials</a>
+      <a class="btn ghost" href="mailto:shossone9260@qq.com" aria-label="Contact via email">Contact Me</a>
+    </div>
+  </main>
+
+  <section id="materials" class="container">
+    <h2 class="section-title">Materials</h2>
+    <div class="grid">
+      <!-- Replace href with your actual folders/files in the repo -->
+      <article class="card">
+        <h3>Algebra</h3>
+        <p>Linear equations, inequalities, functions, and polynomials with examples and exercises.</p>
+        <a href="./materials/algebra/">Open Algebra →</a>
+      </article>
+      <article class="card">
+        <h3>Geometry</h3>
+        <p>Triangles, circles, coordinate geometry, and proofs. Visual diagrams included.</p>
+        <a href="./materials/geometry/">Open Geometry →</a>
+      </article>
+      <article class="card">
+        <h3>Calculus</h3>
+        <p>Limits, derivatives, integrals, and applications with step‑by‑step solutions.</p>
+        <a href="./materials/calculus/">Open Calculus →</a>
+      </article>
+      <article class="card">
+        <h3>Probability & Statistics</h3>
+        <p>Random variables, distributions, combinatorics, and hypothesis testing.</p>
+        <a href="./materials/probability/">Open Probability →</a>
+      </article>
+      <article class="card">
+        <h3>Formula Sheet</h3>
+        <p>One‑page formula summaries for quick revision before exams.</p>
+        <a href="./materials/formula-sheet.pdf">Download Sheet →</a>
+      </article>
+      <article class="card">
+        <h3>Past Papers</h3>
+        <p>Curated past exam papers with marking schemes and worked solutions.</p>
+        <a href="./materials/past-papers/">Open Past Papers →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2 class="section-title">About</h2>
+    <div class="panel">
+      <p>
+        I’m Shossone, and this website serves math students who need reliable, well‑structured exam materials
+        for self‑study. If you spot mistakes or have suggestions, please reach out. Community feedback helps make
+        the materials clearer and more accurate for everyone.
+      </p>
+      <div class="row muted">
+        <span class="kbd">Simple</span>
+        <span class="kbd">Accurate</span>
+        <span class="kbd">Open</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="panel">
+      <p>
+        If anything in the materials is incorrect, or if you have ideas to improve the site, feel free to contact me.
+      </p>
+      <p>
+        Email: <a href="mailto:shossone9260@qq.com">shossone9260@qq.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <span>© <span id="year"></span> Shossone. All rights reserved.</span>
+        <span class="muted">Built with ❤️ for students.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="top" href="#home" aria-label="Back to top">↑</a>
+
+  <script>
+    function toggleMenu(){
+      const m = document.getElementById('menu');
+      m.classList.toggle('open');
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
